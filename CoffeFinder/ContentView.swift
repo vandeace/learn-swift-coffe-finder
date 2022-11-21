@@ -55,27 +55,28 @@ struct ContentView: View {
                             Text("\(result.location)")
                                 .font(.system(size: 14, design: .rounded))
                                 .foregroundColor(.gray)
-                                .padding(EdgeInsets(top: 1, leading: 0, bottom: 1, trailing: 0))
+                                .padding(EdgeInsets(top: 1, leading: 0, bottom: 0, trailing: 0))
                             Text("rating: 4/5")
                                 .font(.system(size: 10, design: .rounded))
                                 .foregroundColor(.gray)
                         }
                     }
                 }// NavigationLink
-                .navigationTitle("CoffeeShop")
-                .searchable(
-                    text: $searchText,
-                    placement: .navigationBarDrawer(displayMode: .always),
-                    prompt: "Search Coffeeshops"
-                )
-                {
-                    ForEach(suggestedResult) { result in
-                        Text("Lookinf for  \(result.name) ?")
-                            .searchCompletion(result.name)
-                    }
+            }
+            .navigationTitle("CoffeeShop")
+            .searchable(
+                text: $searchText,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: "Search Coffeeshops"
+            )
+            {
+                ForEach(suggestedResult) { result in
+                    Text("Lookinf for  \(result.name) ?")
+                        .searchCompletion(result.name)
                 }
             }
         }// NavigationStack
+        
     }
 }
 
