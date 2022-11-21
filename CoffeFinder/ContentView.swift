@@ -71,7 +71,7 @@ struct ContentView: View {
                 {
                     ForEach(suggestedResult) { result in
                         Text("Lookinf for  \(result.name) ?")
-//                            .searchCompletion(result.name)
+                            .searchCompletion(result.name)
                     }
                 }
             }
